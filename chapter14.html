@@ -5,22 +5,36 @@
         <meta charset="UTF-8">
         <title>Domain-Specific Languages - PureScript by Example</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
         <link rel="shortcut icon" href="favicon.png">
+        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+        
         <link rel="stylesheet" href="css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -36,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -81,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Foreword</a></li><li class="chapter-item expanded "><a href="chapter1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter2.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="chapter3.html"><strong aria-hidden="true">3.</strong> Functions and Records</a></li><li class="chapter-item expanded "><a href="chapter4.html"><strong aria-hidden="true">4.</strong> Recursion, Maps And Folds</a></li><li class="chapter-item expanded "><a href="chapter5.html"><strong aria-hidden="true">5.</strong> Pattern Matching</a></li><li class="chapter-item expanded "><a href="chapter6.html"><strong aria-hidden="true">6.</strong> Type Classes</a></li><li class="chapter-item expanded "><a href="chapter7.html"><strong aria-hidden="true">7.</strong> Applicative Validation</a></li><li class="chapter-item expanded "><a href="chapter8.html"><strong aria-hidden="true">8.</strong> The Effect Monad</a></li><li class="chapter-item expanded "><a href="chapter9.html"><strong aria-hidden="true">9.</strong> Canvas Graphics</a></li><li class="chapter-item expanded "><a href="chapter10.html"><strong aria-hidden="true">10.</strong> The Foreign Function Interface</a></li><li class="chapter-item expanded "><a href="chapter11.html"><strong aria-hidden="true">11.</strong> Monadic Adventures</a></li><li class="chapter-item expanded "><a href="chapter12.html"><strong aria-hidden="true">12.</strong> Asynchronous Effects</a></li><li class="chapter-item expanded "><a href="chapter13.html"><strong aria-hidden="true">13.</strong> Generative Testing</a></li><li class="chapter-item expanded "><a href="chapter14.html" class="active"><strong aria-hidden="true">14.</strong> Domain-Specific Languages</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Foreword</a></li><li class="chapter-item expanded "><a href="chapter1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter2.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="chapter3.html"><strong aria-hidden="true">3.</strong> Functions and Records</a></li><li class="chapter-item expanded "><a href="chapter4.html"><strong aria-hidden="true">4.</strong> Recursion, Maps And Folds</a></li><li class="chapter-item expanded "><a href="chapter5.html"><strong aria-hidden="true">5.</strong> Pattern Matching</a></li><li class="chapter-item expanded "><a href="chapter6.html"><strong aria-hidden="true">6.</strong> Type Classes</a></li><li class="chapter-item expanded "><a href="chapter7.html"><strong aria-hidden="true">7.</strong> Applicative Validation</a></li><li class="chapter-item expanded "><a href="chapter8.html"><strong aria-hidden="true">8.</strong> The Effect Monad</a></li><li class="chapter-item expanded "><a href="chapter9.html"><strong aria-hidden="true">9.</strong> Asynchronous Effects</a></li><li class="chapter-item expanded "><a href="chapter10.html"><strong aria-hidden="true">10.</strong> The Foreign Function Interface</a></li><li class="chapter-item expanded "><a href="chapter11.html"><strong aria-hidden="true">11.</strong> Monadic Adventures</a></li><li class="chapter-item expanded "><a href="chapter12.html"><strong aria-hidden="true">12.</strong> Canvas Graphics</a></li><li class="chapter-item expanded "><a href="chapter13.html"><strong aria-hidden="true">13.</strong> Generative Testing</a></li><li class="chapter-item expanded "><a href="chapter14.html" class="active"><strong aria-hidden="true">14.</strong> Domain-Specific Languages</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -116,17 +130,25 @@
                     <h1 class="menu-title">PureScript by Example</h1>
 
                     <div class="right-buttons">
+                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
+                        
+                        <a href="https://github.com/purescript-contrib/purescript-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -147,21 +169,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#domain-specific-languages" id="domain-specific-languages">Domain-Specific Languages</a></h1>
-<h2><a class="header" href="#chapter-goals" id="chapter-goals">Chapter Goals</a></h2>
+                        <h1 id="domain-specific-languages"><a class="header" href="#domain-specific-languages">Domain-Specific Languages</a></h1>
+<h2 id="chapter-goals"><a class="header" href="#chapter-goals">Chapter Goals</a></h2>
 <p>In this chapter, we will explore the implementation of <em>domain-specific languages</em> (or <em>DSLs</em>) in PureScript, using a number of standard techniques.</p>
 <p>A domain-specific language is a language which is well-suited to development in a particular problem domain. Its syntax and functions are chosen to maximize readability of code used to express ideas in that domain. We have already seen a number of examples of domain-specific languages in this book:</p>
 <ul>
 <li>The <code>Game</code> monad and its associated actions, developed in chapter 11, constitute a domain-specific language for the domain of <em>text adventure game development</em>.</li>
-<li>The library of combinators which we wrote for the <code>Async</code> and <code>Parallel</code> functors in chapter 12 could be considered an example of a domain-specific language for the domain of <em>asynchronous programming</em>.</li>
 <li>The <code>quickcheck</code> package, covered in chapter 13, is a domain-specific language for the domain of <em>generative testing</em>. Its combinators enable a particularly expressive notation for test properties.</li>
 </ul>
 <p>This chapter will take a more structured approach to some of standard techniques in the implementation of domain-specific languages. It is by no means a complete exposition of the subject, but should provide you with enough knowledge to build some practical DSLs for your own tasks.</p>
 <p>Our running example will be a domain-specific language for creating HTML documents. Our aim will be to develop a type-safe language for describing correct HTML documents, and we will work by improving a naive implementation in small steps.</p>
-<h2><a class="header" href="#project-setup" id="project-setup">Project Setup</a></h2>
+<h2 id="project-setup"><a class="header" href="#project-setup">Project Setup</a></h2>
 <p>The project accompanying this chapter adds one new dependency - the <code>free</code> library, which defines the <em>free monad</em>, one of the tools which we will be using.</p>
 <p>We will test this chapter's project in PSCi.</p>
-<h2><a class="header" href="#a-html-data-type" id="a-html-data-type">A HTML Data Type</a></h2>
+<h2 id="a-html-data-type"><a class="header" href="#a-html-data-type">A HTML Data Type</a></h2>
 <p>The most basic version of our HTML library is defined in the <code>Data.DOM.Simple</code> module. The module contains the following type definitions:</p>
 <pre><code class="language-haskell">newtype Element = Element
   { name         :: String
@@ -188,7 +209,7 @@ newtype Attribute = Attribute
 &gt; import Prelude
 &gt; import Data.DOM.Simple
 &gt; import Data.Maybe
-&gt; import Control.Monad.Eff.Console
+&gt; import Effect.Console
 
 &gt; :paste
 … log $ render $ Element
@@ -220,7 +241,7 @@ unit
 </li>
 </ul>
 <p>In the remainder of the chapter, we will apply certain techniques to solve these problems and turn our library into a usable domain-specific language for creating HTML documents.</p>
-<h2><a class="header" href="#smart-constructors" id="smart-constructors">Smart Constructors</a></h2>
+<h2 id="smart-constructors"><a class="header" href="#smart-constructors">Smart Constructors</a></h2>
 <p>The first technique we will apply is simple but can be very effective. Instead of exposing the representation of the data to the module's users, we can use the module exports list to hide the <code>Element</code>, <code>Content</code> and <code>Attribute</code> data constructors, and only export so-called <em>smart constructors</em>, which construct data which is known to be correct.</p>
 <p>Here is an example. First, we provide a convenience function for creating HTML elements:</p>
 <pre><code class="language-haskell">element :: String -&gt; Array Attribute -&gt; Maybe (Array Content) -&gt; Element
@@ -337,14 +358,14 @@ height = AttributeKey &quot;height&quot;
 
 &gt; import Prelude
 &gt; import Data.DOM.Smart
-&gt; import Control.Monad.Eff.Console
+&gt; import Effect.Console
 &gt; log $ render $ p [ _class := &quot;main&quot; ] [ text &quot;Hello World!&quot; ]
 
 &lt;p class=&quot;main&quot;&gt;Hello World!&lt;/p&gt;
 unit
 </code></pre>
 <p>Note, however, that no changes had to be made to the <code>render</code> function, because the underlying data representation never changed. This is one of the benefits of the smart constructors approach - it allows us to separate the internal data representation for a module from the representation which is perceived by users of its external API.</p>
-<h2><a class="header" href="#exercises" id="exercises">Exercises</a></h2>
+<h2 id="exercises"><a class="header" href="#exercises">Exercises</a></h2>
 <ol>
 <li>
 <p>(Easy) Use the <code>Data.DOM.Smart</code> module to experiment by creating new HTML documents using <code>render</code>.</p>
@@ -356,7 +377,7 @@ unit
 <p>Modify the representation of an <code>Attribute</code> to take empty attributes into account. Write a function which can be used in place of <code>attribute</code> or <code>:=</code> to add an empty attribute to an element.</p>
 </li>
 </ol>
-<h2><a class="header" href="#phantom-types" id="phantom-types">Phantom Types</a></h2>
+<h2 id="phantom-types"><a class="header" href="#phantom-types">Phantom Types</a></h2>
 <p>To motivate the next technique, consider the following code:</p>
 <pre><code class="language-text">&gt; log $ render $ img
     [ src    := &quot;cat.jpg&quot;
@@ -410,7 +431,7 @@ height = AttributeKey &quot;height&quot;
 <p>Now we find it is impossible to represent these invalid HTML documents, and we are forced to use numbers to represent the <code>width</code> and <code>height</code> attributes instead:</p>
 <pre><code class="language-text">&gt; import Prelude
 &gt; import Data.DOM.Phantom
-&gt; import Control.Monad.Eff.Console
+&gt; import Effect.Console
 
 &gt; :paste
 … log $ render $ img
@@ -423,7 +444,7 @@ height = AttributeKey &quot;height&quot;
 &lt;img src=&quot;cat.jpg&quot; width=&quot;100&quot; height=&quot;200&quot; /&gt;
 unit
 </code></pre>
-<h2><a class="header" href="#exercises-1" id="exercises-1">Exercises</a></h2>
+<h2 id="exercises-1"><a class="header" href="#exercises-1">Exercises</a></h2>
 <ol>
 <li>
 <p>(Easy) Create a data type which represents either pixel or percentage lengths. Write an instance of <code>IsValue</code> for your type. Modify the <code>width</code> and <code>height</code> attributes to use your new type.</p>
@@ -436,7 +457,7 @@ data False
 <p>Modify your solution to the previous exercise to use a phantom type to prevent the user from using the <code>attribute</code> operator with an empty attribute.</p>
 </li>
 </ol>
-<h2><a class="header" href="#the-free-monad" id="the-free-monad">The Free Monad</a></h2>
+<h2 id="the-free-monad"><a class="header" href="#the-free-monad">The Free Monad</a></h2>
 <p>In our final set of modifications to our API, we will use a construction called the <em>free monad</em> to turn our <code>Content</code> type into a monad, enabling do notation. This will allow us to structure our HTML documents in a form in which the nesting of elements becomes clearer - instead of this:</p>
 <pre><code class="language-haskell">p [ _class := &quot;main&quot; ]
   [ elem $ img
@@ -497,7 +518,7 @@ elem :: Element -&gt; Content Unit
 elem e = liftF $ ElementContent e unit
 </code></pre>
 <p>Some other routine modifications have to be made, but the interesting changes are in the <code>render</code> function, where we have to <em>interpret</em> our free monad.</p>
-<h2><a class="header" href="#interpreting-the-monad" id="interpreting-the-monad">Interpreting the Monad</a></h2>
+<h2 id="interpreting-the-monad"><a class="header" href="#interpreting-the-monad">Interpreting the Monad</a></h2>
 <p>The <code>Control.Monad.Free</code> module provides a number of functions for interpreting a computation in a free monad:</p>
 <pre><code class="language-haskell">runFree
   :: forall f a
@@ -567,7 +588,7 @@ render = execWriter &lt;&lt;&lt; renderElement
 <p>That's it! We can test our new monadic API in PSCi, as follows:</p>
 <pre><code class="language-text">&gt; import Prelude
 &gt; import Data.DOM.Free
-&gt; import Control.Monad.Eff.Console
+&gt; import Effect.Console
 
 &gt; :paste
 … log $ render $ p [] $ do
@@ -578,11 +599,11 @@ render = execWriter &lt;&lt;&lt; renderElement
 &lt;p&gt;&lt;img src=&quot;cat.jpg&quot; /&gt;A cat&lt;/p&gt;
 unit
 </code></pre>
-<h2><a class="header" href="#exercises-2" id="exercises-2">Exercises</a></h2>
+<h2 id="exercises-2"><a class="header" href="#exercises-2">Exercises</a></h2>
 <ol>
 <li>(Medium) Add a new data constructor to the <code>ContentF</code> type to support a new action <code>comment</code>, which renders a comment in the generated HTML. Implement the new action using <code>liftF</code>. Update the interpretation <code>renderContentItem</code> to interpret your new constructor appropriately.</li>
 </ol>
-<h2><a class="header" href="#extending-the-language" id="extending-the-language">Extending the Language</a></h2>
+<h2 id="extending-the-language"><a class="header" href="#extending-the-language">Extending the Language</a></h2>
 <p>A monad in which every action returns something of type <code>Unit</code> is not particularly interesting. In fact, aside from an arguably nicer syntax, our monad adds no extra functionality over a <code>Monoid</code>.</p>
 <p>Let's illustrate the power of the free monad construction by extending our language with a new monadic action which returns a non-trivial result.</p>
 <p>Suppose we want to generate HTML documents which contain hyperlinks to different sections of the document using <em>anchors</em>. We can accomplish this already, by generating anchor names by hand and including them at least twice in the document: once at the definition of the anchor itself, and once in each hyperlink. However, this approach has some basic issues:</p>
@@ -655,7 +676,7 @@ render e = evalState (execWriterT (renderElement e)) 0
 <p>With that, we can try out our new functionality in PSCi, by generating a unique name inside the <code>Content</code> monad, and using it as both the name of an element and the target of a hyperlink:</p>
 <pre><code class="language-text">&gt; import Prelude
 &gt; import Data.DOM.Name
-&gt; import Control.Monad.Eff.Console
+&gt; import Effect.Console
 
 &gt; :paste
 … render $ p [ ] $ do
@@ -670,7 +691,7 @@ render e = evalState (execWriterT (renderElement e)) 0
 unit
 </code></pre>
 <p>You can verify that multiple calls to <code>newName</code> do in fact result in unique names.</p>
-<h2><a class="header" href="#exercises-3" id="exercises-3">Exercises</a></h2>
+<h2 id="exercises-3"><a class="header" href="#exercises-3">Exercises</a></h2>
 <ol>
 <li>
 <p>(Medium) We can simplify the API further by hiding the <code>Element</code> type from its users. Make these changes in the following steps:</p>
@@ -691,7 +712,7 @@ constructor for your <code>newtype</code>.</p>
 <p><em>Hint</em>: use the <code>ask</code> action and the <code>ReaderT</code> monad transformer to interpret this action. Alternatively, you might prefer to use the <code>RWS</code> monad.</p>
 </li>
 </ol>
-<h2><a class="header" href="#conclusion" id="conclusion">Conclusion</a></h2>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>In this chapter, we developed a domain-specific language for creating HTML documents, by incrementally improving a naive implementation using some standard techniques:</p>
 <ul>
 <li>We used <em>smart constructors</em> to hide the details of our data representation, only permitting the user to create documents which were <em>correct-by-construction</em>.</li>
@@ -736,10 +757,10 @@ constructor for your <code>newtype</code>.</p>
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
